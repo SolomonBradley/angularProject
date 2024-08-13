@@ -1,0 +1,10 @@
+<div>
+  <input type="text" #taskTitle placeholder="New Task">
+  <button (click)="addTask(taskTitle.value)">Add Task</button>
+</div>
+
+<div *ngFor="let task of tasks" class="task-item">
+  <h3>{{ task.title }}</h3>
+  <button *ngIf="!task.done" (click)="markAsDone(task)">Mark as Done</button>
+  <span *ngIf="task.done" class="done">Done</span>
+</div>

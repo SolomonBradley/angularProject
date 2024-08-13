@@ -1,0 +1,5 @@
+<div *ngFor="let course of courses" class="course-item">
+  <h3>{{ course.title }}</h3>
+  <button *ngIf="!course.completed" (click)="markAsCompleted(course)">Mark as Completed</button>
+  <span *ngIf="course.completed" class="completed">Completed</span>
+</div>
